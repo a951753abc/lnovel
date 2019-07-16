@@ -15,28 +15,19 @@
             setTimeout('ShowTime()',1000);
         }
         function nameChange() {
-            <?php
-                $name = ["綾香", "黑田", "優樹", "憂樹", "優數", ""];
-                $serifu = [
-                    "為什麼他這麼溫柔，卻會被大家當作變態呢？",
-                    "是嗎？謝謝你的讚美。",
-                    "抱歉學姐，我有點事，得先告辭了！",
-                    "防守！",
-                    "你有為了完成目的而不擇手段的覺悟嗎。",
-                    ""
-                ];
-            ?>
             $.getJSON('backend.php', function(data) {
-                $.each(data.name, function(index) {
-                    console.log(index);
+                $.each(data.name, function(name, values) {
+                    if (name === 'name') {
+                        $.each(values, function (key, value) {
+                            $('.n'+(key+1)).text(value);
+                        })
+                    } else {
+                        $.each(values, function (key, value) {
+                            $('.s'+(key+1)).text(value);
+                        })
+                    }
                 });
             });
-            for (var i=1; i<3; i++) {
-                $('.n'+i).text('<?=$name[array_rand($name, 1)]?>');
-            }
-            for (i=1; i<7; i++) {
-                $('.s'+i).text('<?=$serifu[array_rand($serifu, 1)]?>');
-            }
         }
     </script>
 </head>

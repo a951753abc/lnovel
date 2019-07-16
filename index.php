@@ -5,10 +5,7 @@
     <script>
         function ShowTime(){
             var NowDate=new Date();
-            var h=NowDate.getHours();
-            var m=NowDate.getMinutes();
             var s=NowDate.getSeconds();
-            document.getElementById('showbox').innerHTML = h+'時'+m+'分'+s+'秒';
             if (s%5 === 0) {
                 nameChange();
             }
@@ -32,8 +29,6 @@
     </script>
 </head>
 <body onload="ShowTime()">
-<br>
-<div id="showbox"></div>
 「<span class="s1"></span>」<br>
 「<span class="s2"></span>」<br>
 碰！<br>

@@ -3,9 +3,12 @@
     <title>時よ止まれ</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
-        $('#s1').on('change', function() {
-            console.log('.on(change) = ' + $(this).val());
+        $(function(){
+            $('#s1').on('change', function() {
+                console.log('.on(change) = ' + $(this).val());
+            });
         });
+
         function nameChange() {
             $.getJSON('backend.php', function(data) {
                 $.each(data, function(name, values) {

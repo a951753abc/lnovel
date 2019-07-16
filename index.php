@@ -5,7 +5,10 @@
     <script>
         function ShowTime(){
             var NowDate=new Date();
+            var h=NowDate.getHours();
+            var m=NowDate.getMinutes();
             var s=NowDate.getSeconds();
+            document.getElementById('showbox').innerHTML = h+'時'+m+'分'+s+'秒';
             if (s%5 === 0) {
                 nameChange();
             }
@@ -24,10 +27,10 @@
                 ];
             ?>
             for (var i=1; i<3; i++) {
-                $('.n'+i).text(<?=array_rand($name, 1)?>);
+                $('.n'+i).text(<?=$name[array_rand($name, 1)]?>);
             }
             for (i=1; i<7; i++) {
-                $('.s'+i).text(<?=array_rand($serifu, 1)?>);
+                $('.s'+i).text(<?=$serifu[array_rand($serifu, 1)]?>);
             }
         }
     </script>

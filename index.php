@@ -27,9 +27,8 @@
                 ];
             ?>
             $.getJSON('backend.php', function(data) {
-                $.each(data, function(index) {
-                    alert(data);
-                    alert(index);
+                $.each(data.name, function(index) {
+                    console.log(index);
                 });
             });
             for (var i=1; i<3; i++) {

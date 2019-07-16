@@ -16,7 +16,7 @@
         }
         function nameChange() {
             $.getJSON('backend.php', function(data) {
-                $.each(data.name, function(name, values) {
+                $.each(data, function(name, values) {
                     if (name === 'name') {
                         $.each(values, function (key, value) {
                             $('.n'+(key+1)).text(value);

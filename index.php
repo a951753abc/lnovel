@@ -5,32 +5,29 @@
     <script>
         function ShowTime(){
             var NowDate=new Date();
-            var h=NowDate.getHours();
-            var m=NowDate.getMinutes();
             var s=NowDate.getSeconds();
-            document.getElementById('showbox').innerHTML = h+'時'+m+'分'+s+'秒';
             if (s%5 === 0) {
                 nameChange();
             }
             setTimeout('ShowTime()',1000);
         }
         function nameChange() {
-            var n = ["綾香", "黑田", "優樹", "憂樹", "優數", ""];
-            var srifu = [
-                "為什麼他這麼溫柔，卻會被大家當作變態呢？",
-                "是嗎？謝謝你的讚美。",
-                "抱歉學姐，我有點事，得先告辭了！",
-                "防守！",
-                "你有為了完成目的而不擇手段的覺悟嗎。",
-                ""
-            ];
+            <?php
+                $name = ["綾香", "黑田", "優樹", "憂樹", "優數", ""];
+                $serifu = [
+                    "為什麼他這麼溫柔，卻會被大家當作變態呢？",
+                    "是嗎？謝謝你的讚美。",
+                    "抱歉學姐，我有點事，得先告辭了！",
+                    "防守！",
+                    "你有為了完成目的而不擇手段的覺悟嗎。",
+                    ""
+                ];
+            ?>
             for (var i=1; i<3; i++) {
-                n.sort(function(){return Math.random()>0.5?-1:1;});
-                $('.n'+i).text(n[0]);
+                $('.n'+i).text(<?=array_rand($name, 1)?>);
             }
             for (i=1; i<7; i++) {
-                srifu.sort(function(){return Math.random()>0.5?-1:1;});
-                $('.s'+i).text(srifu[0]);
+                $('.s'+i).text(<?=array_rand($serifu, 1)?>);
             }
         }
     </script>

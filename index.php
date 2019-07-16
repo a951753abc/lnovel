@@ -3,14 +3,6 @@
     <title>時よ止まれ</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
-        function ShowTime(){
-            var NowDate=new Date();
-            var s=NowDate.getSeconds();
-            if (s%5 === 0) {
-                nameChange();
-            }
-            setTimeout('ShowTime()',1000);
-        }
         function nameChange() {
             $.getJSON('backend.php', function(data) {
                 $.each(data, function(name, values) {
@@ -28,15 +20,11 @@
         }
     </script>
 </head>
-<body onload="ShowTime()">
-「<span class="s1"></span>」<br>
-「<span class="s2"></span>」<br>
-碰！<br>
-什麼都不說的<span class="n1">綾香</span>，用右手朝著<span class="n2">黑田</span>的臉狠狠的就是一拳。<br>
-衝擊<br>
-「<span class="s3"></span>」<br>
-「<span class="s4"></span>」<br>
-「<span class="s5"></span>」<br>
-「<span class="s6"></span>」<br>
+<body>
+決定行動後，我決定觀察一下清水的戰鬥方式。 <br>
+雖然經過兩個禮拜的修養，HP值已經恢復八成了，但是和其他玩家相比，我的HP還不是能進行戰鬥狀況。 <br>
+將骰子召喚出來後握在手上，我等待著清水的攻擊，而清水也沒有辜負我的期待，他像變魔術一樣，憑空變出兩顆圓球狀的物體後，冷冷的從嘴裡說出了這場戰鬥的啟動語。 <br>
+「使用投擲。」 <br>
+「 <label><input type="text" title="serifu"></label> 」 <br>
 </body>
 </html>

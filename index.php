@@ -26,6 +26,12 @@
                     ""
                 ];
             ?>
+            $.getJSON('backend.php', function(data) {
+                $.each(data, function(index) {
+                    alert(data);
+                    alert(index);
+                });
+            });
             for (var i=1; i<3; i++) {
                 $('.n'+i).text('<?=$name[array_rand($name, 1)]?>');
             }

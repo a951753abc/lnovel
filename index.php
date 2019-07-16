@@ -27,10 +27,10 @@
                 ];
             ?>
             for (var i=1; i<3; i++) {
-                $('.n'+i).text(<?=$name[array_rand($name, 1)]?>);
+                $('.n'+i).text('<?=$name[array_rand($name, 1)]?>');
             }
             for (i=1; i<7; i++) {
-                $('.s'+i).text(<?=$serifu[array_rand($serifu, 1)]?>);
+                $('.s'+i).text('<?=$serifu[array_rand($serifu, 1)]?>');
             }
         }
     </script>

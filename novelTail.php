@@ -21,4 +21,4 @@ switch ($num) {
 }
 $json_string = json_decode($json_string, true);
 
-echo json_decode($json_string, JSON_UNESCAPED_SLASHES);
+echo json_encode($json_string, JSON_UNESCAPED_SLASHES);

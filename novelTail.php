@@ -13,12 +13,10 @@ $num = array_rand($novel, 1);
 $text = '';
 switch ($num) {
     case 0:
-        $json_string = file_get_contents('1.json');
+        $json_string = file_get_contents('novel_tail_1.html');
         break;
     case 1:
-        $json_string = file_get_contents('2.json');
+        $json_string = file_get_contents('novel_tail_2.html');
         break;
 }
-$json_string = json_decode($json_string, true);
-
 echo json_encode($json_string, JSON_UNESCAPED_SLASHES);

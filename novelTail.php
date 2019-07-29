@@ -19,4 +19,6 @@ switch ($num) {
         $json_string = file_get_contents('2.json');
         break;
 }
-echo $json_string;
+$json_string = json_decode($json_string, true);
+
+echo json_decode($json_string, JSON_UNESCAPED_SLASHES);

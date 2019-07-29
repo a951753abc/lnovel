@@ -4,11 +4,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
         $(function(){
-            $('#s1').on('change', function() {
-                console.log('.on(change) = ' + $(this).val());
-            });
+            // $('#s1').on('change', function() {
+            //     console.log('.on(change) = ' + $(this).val());
+            // });
+            novelTail();
         });
-
+        function novelTail() {
+            $.getJSON('novelTail.php', function(data) {
+                $('#novel-tail').text(data);
+            });
+        }
         function nameChange() {
             $.getJSON('backend.php', function(data) {
                 $.each(data, function(name, values) {
@@ -27,10 +32,13 @@
     </script>
 </head>
 <body>
-決定行動後，我決定觀察一下清水的戰鬥方式。 <br>
-雖然經過兩個禮拜的修養，HP值已經恢復八成了，但是和其他玩家相比，我的HP還不是能進行戰鬥狀況。 <br>
-將骰子召喚出來後握在手上，我等待著清水的攻擊，而清水也沒有辜負我的期待，他像變魔術一樣，憑空變出兩顆圓球狀的物體後，冷冷的從嘴裡說出了這場戰鬥的啟動語。 <br>
-「使用投擲。」 <br>
-「 <label><input id="s1" type="text" title="serifu"></label> 」 <br>
+「這次的合作夥伴嗎......是你啊。上回是園藝，這回又在看什麼？」 <br>
+來到集合地點後，我打量著穿著深褐色皮衣外套，有著亂糟糟鳥窩頭，坐在地板上讀書的男人。 <br>
+認識他以來，每回都可以看到他在閱讀不同種類的書籍。 <br>
+「接龍。小說接龍。由數名作者在幾乎無規則下的環境書寫故事，閱讀時可以從各種角度切入分析，挺有意思的。」 <br>
+說著說著他把書本刻意抬高，使我能看到上頭的書名。 <br>
+<span id="novel-tail"></span>
+<!--「 <label><input id="s1" type="text" title="serifu"></label> 」 <br>-->
+
 </body>
 </html>

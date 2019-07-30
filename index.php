@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set("Asia/Taipei");
 $novel = ['霞之謎', 'Gold/Apocrypha -秋雨新霽-'];
 $num = array_rand($novel, 1);
 switch ($num) {

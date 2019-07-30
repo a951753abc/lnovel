@@ -16,6 +16,10 @@ $root = null;
 if ($hour >= 8) {
     $hourText = 24 - $hour;
     $root = 1;
+    $chtAry = [
+            '零', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二', '十三', '十四', '十五', '十六'
+    ];
+    $hourText = $chtAry[$hourText];
 } else {
     $root = 2;
 }
@@ -25,8 +29,8 @@ if ($hour >= 8) {
     <title>時よ止まれ</title>
     <style>
         .mGzaTb {
-            padding:8px;
-            color: rgba(33,33,33,1);
+            padding: 8px;
+            color: rgba(33, 33, 33, 1);
             font-family: "Source Sans Pro", sans-serif;
             font-size: 16px;
             font-weight: 400;
@@ -36,6 +40,7 @@ if ($hour >= 8) {
             outline: none;
             position: relative;
         }
+
         p {
             display: block;
             margin-block-start: 1em;
@@ -46,21 +51,22 @@ if ($hour >= 8) {
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
-        $(function(){
+        $(function () {
             // $('#s1').on('change', function() {
             //     console.log('.on(change) = ' + $(this).val());
             // });
         });
+
         function nameChange() {
-            $.getJSON('backend.php', function(data) {
-                $.each(data, function(name, values) {
+            $.getJSON('backend.php', function (data) {
+                $.each(data, function (name, values) {
                     if (name === 'name') {
                         $.each(values, function (key, value) {
-                            $('.n'+(key+1)).text(value);
+                            $('.n' + (key + 1)).text(value);
                         })
                     } else {
                         $.each(values, function (key, value) {
-                            $('.s'+(key+1)).text(value);
+                            $('.s' + (key + 1)).text(value);
                         })
                     }
                 });
@@ -75,17 +81,17 @@ if ($hour >= 8) {
     <p>認識他以來，每回都可以看到他在閱讀不同種類的書籍。</p>
     <p>「接龍。小說接龍。由數名作者在幾乎無規則下的環境書寫故事，閱讀時可以從各種角度切入分析，挺有意思的。」</p>
     <p>說著說著他把書本刻意抬高，使我能看到上頭的書名。</p>
-    <span id="novel-tail"><?=$novel_tail?></span>
-    <?php if ($root === 1) :?>
-    <p>「話說回來，距離任務執行時間，還有<?=$hourText?>小時。你提早出現是要提早動工嗎？」</p>
-    <p>他闔上書本，詫異地問。</p>
-    <p>「我是這麼打算的，畢竟夜晚是他們的全盛期，風險太高。」</p>
-    <p>「可是你的能力也是半夜才能使用不是嗎？」</p>
-    <p>「我不是那麼喜歡那個充滿賭博性質的能力......」</p>
-    <p>「也對，仔細想想就跟小說接龍有異曲同工之妙。」</p>
-    <p>「......我記得你上次是用園藝做比喻的。」</p>
-    <?php else :?>
-    <?php endif;?>
+    <span id="novel-tail"><?= $novel_tail ?></span>
+    <?php if ($root === 1) : ?>
+        <p>「話說回來，距離任務執行時間，還有<?= $hourText ?>小時。你提早出現是要提早動工嗎？」</p>
+        <p>他闔上書本，詫異地問。</p>
+        <p>「我是這麼打算的，畢竟夜晚是他們的全盛期，風險太高。」</p>
+        <p>「可是你的能力也是半夜才能使用不是嗎？」</p>
+        <p>「我不是那麼喜歡那個充滿賭博性質的能力......」</p>
+        <p>「也對，仔細想想就跟小說接龍有異曲同工之妙。」</p>
+        <p>「......我記得你上次是用園藝做比喻的。」</p>
+    <?php else : ?>
+    <?php endif; ?>
 
 </div>
 

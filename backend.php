@@ -7,21 +7,14 @@
  * @date 2019/7/16
  * @since 2019/7/16 description
  */
-header('Content-Type: application/json; charset=UTF-8');
-$name = ["綾香", "黑田", "優樹", "憂樹", "優數", ""];
-$serifu = [
-    "為什麼他這麼溫柔，卻會被大家當作變態呢？",
-    "是嗎？謝謝你的讚美。",
-    "抱歉學姐，我有點事，得先告辭了！",
-    "防守！",
-    "你有為了完成目的而不擇手段的覺悟嗎。",
-    ""
-];
-for ($i=0;$i<=1;$i++) {
-    $json_name[] = $name[array_rand($name, 1)];
-    $json_serifu[] = $serifu[array_rand($serifu, 1)];
+if (isset($_COOKIE['loopCount'])) {
+    $loopCount = $_COOKIE['loopCount'];
+} else {
+    setcookie('loopCount', 0, time() + 60 * 60 * 24);
+    $loopCount = $_COOKIE['loopCount'];
 }
-for ($i=0;$i<=4;$i++) {
-    $json_serifu[] = $serifu[array_rand($serifu, 1)];
-}
-echo json_encode(['name' => $json_name, 'serifu' => $json_serifu]);
+$loopCount++;
+setcookie('loopCount', $loopCount, time() + 60 * 60 * 24);
+header("Location: https://yumehiru.link/ln/");
+exit;
+

@@ -1,7 +1,14 @@
 <?php
+session_start();
 date_default_timezone_set("Asia/Taipei");
 $novel = ['霞之謎', 'Gold/Apocrypha -秋雨新霽-'];
 $num = array_rand($novel, 1);
+if (isset($_COOKIE['loopCount'])) {
+    $loopCount = $_COOKIE['loopCount'];
+} else {
+    setcookie('loopCount', 0, time() + 60 * 60 * 24);
+    $loopCount = $_COOKIE['loopCount'];
+}
 switch ($num) {
     case 0:
         $novel_tail = file_get_contents('novel_tail_1.html');
@@ -98,7 +105,7 @@ if ($hour >= 8) {
     <p>「接龍。小說接龍。由數名作者在幾乎無規則下的環境書寫故事，閱讀時可以從各種角度切入分析，挺有意思的。」</p>
     <p>說著說著他把書本刻意抬高，使我能看到上頭的書名。</p>
     <span id="novel-tail"><?= $novel_tail ?></span>
-    <?php if ($root === 1) : ?>
+    <?php if ($loopCount === 0) : ?>
         <p>結束小說接龍的話題後，他闔上書本，詫異地問：</p>
         <p>「話說回來，距離任務執行時間，還有<?= $hourText ?>小時。你提早出現是要提早動工嗎？」</p>
         <p>「是這麼打算，畢竟夜晚是他們的全盛期，風險太高。」</p>
@@ -134,6 +141,7 @@ if ($hour >= 8) {
         <p>然而死神終究是慢了一步，當我不知被什麼冰冷之物給貫穿心臟時，耳邊傳來夥伴不肯向命運低頭的呢喃聲。</p>
         <p><br></p>
         <p>那麼──二周目見，下次我會盡量讀完對話紀錄的。</p>
+        <p><a href="backend.php" target="_self">Load SaveFile.</a></p>
     <?php else : ?>
     <?php endif; ?>
 

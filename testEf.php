@@ -76,8 +76,8 @@ session_start();
                 displayTimeLeft(secondsLeft);
             }, 1000);
         }
-        const timeLeft = document.querySelector('.display-time-left');
         function displayTimeLeft(seconds) {
+            let timeLeft = document.querySelector('.display-time-left');
             let remainderSeconds = seconds % 60;
             if (remainderSeconds < 10) {
                 remainderSeconds = '0' + remainderSeconds;

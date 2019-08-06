@@ -122,7 +122,7 @@ if ($hour >= 8) {
         </p>
         <p><br></p>
         <p>失去意識前，我心想這次任務一定要給個死亡加給。</p>
-        <p><a href="" target="_self" onclick="changeFate()">Load SaveFile.</a></p>
+        <p><span onclick="changeFate()">Load SaveFile.</span></p>
         <!--三周目後-->
     <?php elseif ($loopCount > 1): ?>
         <p>「我記得你上次是用園藝做比喻......算了，我們還是快點去把目標解決吧。」</p>
@@ -240,7 +240,7 @@ if ($hour >= 8) {
         <p>然而死神終究是慢了一步，當我不知被什麼冰冷之物給貫穿心臟時，耳邊傳來夥伴不肯向命運低頭的呢喃聲。</p>
         <p><br></p>
         <p>二周目見，不知名的男子，下次我會盡量讀完對話紀錄的。</p>
-        <p><a href="" target="_self" onclick="changeFate()">Load SaveFile.</a></p>
+        <p><span onclick="changeFate()">Load SaveFile.</span></p>
     <?php endif; ?>
 </div>
 

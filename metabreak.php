@@ -43,6 +43,7 @@ if (!$edit) {
             margin-block-end: 1em;
             margin-inline-start: 0px;
             margin-inline-end: 0px;
+            cursor: default;
         }
         .myButton {
             -moz-box-shadow:inset 0px 39px 0px -24px #e67a73;
@@ -94,6 +95,10 @@ if (!$edit) {
             $('html,body').animate({scrollTop:0}, 333);
             window.location.href = 'https://yumehiru.link/ln/metabreak.php';
         }
+
+        function del() {
+            $(this).css('text-decoration', 'line-through');
+        }
     </script>
 </head>
 <body>
@@ -110,8 +115,7 @@ if (!$edit) {
     <p>奇怪我明明沒有自報家門啊？難道是我身上有什麼特徵，例如身上的教袍......好吧。</p>
     <p>察覺自己的愚蠢後，我高舉雙手，持續釋出善意。</p>
     <p>「等等，我不是來跟你相殺的。我只是想確認一些事，例如高尾山下的村民遭到洗劫──」</p>
-    <p>他卻不理會我的話語，一個箭步朝我衝來，手電筒的光源也同時消失。</p>
-    <p><br></p>
+    <p style="cursor: not-allowed;" onclick="del()">他卻不理會我的話語，一個箭步朝我衝來，手電筒的光源也同時消失。</p>
 </div>
 </body>
 </html>

@@ -60,7 +60,7 @@ session_start();
             var NowDate=new Date();
             var s=NowDate.getSeconds();
             document.getElementById('display-time-left').innerHTML = '00:'+s+'';
-            if (s%5 === 0) {
+            if (s%15 === 0) {
                 console.log('boom');
             }
             setTimeout('ShowTime()',1000);

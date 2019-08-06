@@ -290,6 +290,57 @@ if ($_SERVER['REMOTE_ADDR'] == '111.251.159.104') {
         <?php endif;?>
     <?php endif; ?>
     <?php if (($loopCount > 1 && $root == 2) || ($loopCount == 0 && $root == 2)):?>
+        <script>
+            function ShowTime(){
+                var NowDate=new Date();
+                var s=NowDate.getSeconds();
+                document.getElementById('display-time-left').innerHTML = '00:'+s+'';
+                if (s%15 === 0) {
+                    $('#display-time-left').hidden();
+                }
+                setTimeout('ShowTime()',1000);
+            }
+
+            function getDocumentTop() {
+                var scrollTop, bodyScrollTop = 0, documentScrollTop = 0;
+                if (document.body) {
+                    bodyScrollTop = document.body.scrollTop;
+                }
+                if (document.documentElement) {
+                    documentScrollTop = document.documentElement.scrollTop;
+                }
+                scrollTop = (bodyScrollTop - documentScrollTop > 0) ? bodyScrollTop : documentScrollTop;
+                return scrollTop;
+            }
+
+            function getWindowHeight() {
+                var windowHeight = 0;
+                if (document.compatMode == "CSS1Compat") {
+                    windowHeight = document.documentElement.clientHeight;
+                } else {
+                    windowHeight = document.body.clientHeight;
+                }
+                return windowHeight;
+            }
+
+            function getScrollHeight() {
+                var scrollHeight, bodyScrollHeight = 0, documentScrollHeight = 0;
+                if (document.body) {
+                    bodyScrollHeight = document.body.scrollHeight;
+                }
+
+                if (document.documentElement) {
+                    documentScrollHeight = document.documentElement.scrollHeight;
+                }
+                scrollHeight = (bodyScrollHeight - documentScrollHeight > 0) ? bodyScrollHeight : documentScrollHeight;
+                return scrollHeight;
+            }
+            window.onscroll = function () {
+                if (getScrollHeight() == getWindowHeight() + getDocumentTop()) {
+                    ShowTime();
+                }
+            };
+        </script>
         <p>「時間差不多，走吧。他就在高尾山上。處理四處作亂的能力者〈惡〉，是我們〈諾斯底〉的使命。」</p>
         <p>「雖然我不太算教眾，比較像餬口飯吃的社畜啦......畢竟這裡的待遇最好。」</p>
         <p>我抓了抓頭，跟上夥伴的腳步。</p>
@@ -320,19 +371,22 @@ if ($_SERVER['REMOTE_ADDR'] == '111.251.159.104') {
         <p>他卻不理會我的話語，一個箭步朝我衝來，手電筒的光源也同時消失。</p>
         <p><br></p>
         <p>＊＊＊</p>
-        <p><br></p>
-        <p>那麼，以上就是至今為止的前情提要。</p>
-        <p>我既不知你是何人，也不知你會如何看待我的經歷，更不知這樣的資訊能讓你了解多少。</p>
-        <p>不過你如果袖手旁觀的話，我鐵定會死吧。</p>
-        <p>我無法假設你的想法，也無法與你對話。我所能做的，只有把自己的經歷資訊轉化為第一人稱平面資訊，以及把修改一切的能力轉交於你。</p>
-        <p>如果你有意願的話，就請跟我這麼做吧──</p>
-        <p><br></p>
-        <p style="cursor: pointer;" onclick="metaBreak()">「──
-            <ruby>流出
-                <rt>Meta Break</rt>
-            </ruby>
-            。」
-        </p>
+        <div>
+            <p><br></p>
+            <p>那麼，以上就是至今為止的前情提要。</p>
+            <p>我既不知你是何人，也不知你會如何看待我的經歷，更不知這樣的資訊能讓你了解多少。</p>
+            <p>不過你如果袖手旁觀的話，我鐵定會死吧。</p>
+            <p>我無法假設你的想法，也無法與你對話。我所能做的，只有把自己的經歷資訊轉化為第一人稱平面資訊，以及把修改一切的能力轉交於你。</p>
+            <p>如果你有意願的話，就請跟我這麼做吧──</p>
+            <p><br></p>
+            <p style="cursor: pointer;" onclick="metaBreak()">「──
+                <ruby>流出
+                    <rt>Meta Break</rt>
+                </ruby>
+                。」
+            </p>
+            <p id="display-time-left"></p>
+        </div>
     <?php endif;?>
 </div>
 </body>

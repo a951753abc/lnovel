@@ -92,7 +92,7 @@ if (!$edit) {
 
         function metaBreak() {
             $('html,body').animate({scrollTop:0}, 333);
-            window.location.href = 'https://yumehiru.link/ln/metabraek.php';
+            window.location.href = 'https://yumehiru.link/ln/metabreak.php';
         }
     </script>
 </head>

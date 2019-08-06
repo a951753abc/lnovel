@@ -109,7 +109,7 @@ if ($_SERVER['REMOTE_ADDR'] == '111.251.159.104') {
 
         function metaBreak() {
             $('html,body').animate({scrollTop:0}, 333);
-            window.location.href = 'https://yumehiru.link/ln/metabraek.php';
+            window.location.href = 'https://yumehiru.link/ln/metabreak.php';
         }
     </script>
 </head>

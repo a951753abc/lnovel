@@ -83,6 +83,31 @@ if (!$edit) {
                 }
             });
         }
+        function ShowTime(){
+            var NowDate=new Date();
+            var s=NowDate.getSeconds();
+            document.getElementById('display-time-left').innerHTML = '00:'+s+'';
+            if (s%15 === 0) {
+                $('html,body').animate({scrollTop:0}, 333);
+                $('#display-time-left').remove();
+                $('#break').empty();
+                $.ajax({
+                    type: "POST",
+                    url: "metaText.php",
+                    dataType: "json",
+                    data: {
+                        id: 'break',
+                    },
+                    success: function(data) {
+                        $('#break').after(data.text);
+                    },
+                    error: function(jqXHR) {
+                        console.log(jqXHR);
+                    }
+                });
+            }
+            setTimeout('ShowTime()',1000);
+        }
     </script>
 </head>
 <body>
@@ -100,6 +125,8 @@ if (!$edit) {
     <p>察覺自己的愚蠢後，我高舉雙手，持續釋出善意。</p>
     <p>「等等，我不是來跟你相殺的。我只是想確認一些事，例如高尾山下的村民遭到洗劫──」</p>
     <p style="cursor: not-allowed;" onclick="del('text-1')" id="text-1">他卻不理會我的話語，一個箭步朝我衝來，手電筒的光源也同時消失。</p>
+    <div id="break"></div>
+    <p id="display-time-left"></p>
 </div>
 </body>
 </html>

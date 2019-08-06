@@ -68,22 +68,6 @@ if ($hour >= 8) {
             ShowTime();
         });
 
-        function nameChange() {
-            $.getJSON('backend.php', function (data) {
-                $.each(data, function (name, values) {
-                    if (name === 'name') {
-                        $.each(values, function (key, value) {
-                            $('.n' + (key + 1)).text(value);
-                        })
-                    } else {
-                        $.each(values, function (key, value) {
-                            $('.s' + (key + 1)).text(value);
-                        })
-                    }
-                });
-            });
-        }
-
         function ShowTime() {
             var NowDate = new Date();
             var h = NowDate.getHours();
@@ -95,7 +79,7 @@ if ($hour >= 8) {
 
         function changeFate() {
             $('html,body').animate({scrollTop:0}, 333);
-            window.location.href = 'backend.php';
+            window.location.href = 'https://yumehiru.link/ln/backend.php';
         }
     </script>
 </head>

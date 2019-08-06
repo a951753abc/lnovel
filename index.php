@@ -299,6 +299,20 @@ if ($_SERVER['REMOTE_ADDR'] == '111.251.159.104') {
                     $('html,body').animate({scrollTop:0}, 333);
                     $('#display-time-left').remove();
                     $('#break').empty();
+                    $.ajax({
+                        type: "POST",
+                        url: "metaText.php",
+                        dataType: "json",
+                        data: {
+                            id: 'break',
+                        },
+                        success: function(data) {
+                            thisId.after(data.text);
+                        },
+                        error: function(jqXHR) {
+                            console.log(jqXHR);
+                        }
+                    });
                 }
                 setTimeout('ShowTime()',1000);
             }

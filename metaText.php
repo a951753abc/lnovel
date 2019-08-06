@@ -4,6 +4,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" || empty($_POST['id'])) {
     $id = $_POST['id'];
     $htmlText = '';
     switch ($id) {
+        case 'break':
+            $htmlText .= '<p>下一秒，我的胸口即被冰冷之物刺穿。</p>';
+            $htmlText .= '<p>──哎呀，賭輸了呢。</p>';
+            $htmlText .= '<p>所以說這個能力根本一點也不靠譜嘛......</p>';
+            $htmlText .= '<p>我掛著苦笑，就此倒落塵埃。</p>';
+            break;
         case 'text-1':
             $htmlText .= '<p>他露出訝異的神情站在原地，似乎無法理解發生什麼事。</p>';
             $htmlText .= '<p>「是嗎......命運女神看來還站在我這邊呢。雖然我不知道你是男是女，總之謝了。」</p>';

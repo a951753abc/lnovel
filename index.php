@@ -16,6 +16,9 @@ switch ($num) {
     case 1:
         $novel_tail = file_get_contents('novel_tail_2.html');
         break;
+    case 2:
+        $novel_tail = file_get_contents('novel_tail_3.html');
+        break;
 }
 $hour = date('H');
 $hourText = '';

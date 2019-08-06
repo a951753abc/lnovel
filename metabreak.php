@@ -70,6 +70,7 @@ if (!$edit) {
             });
         }
         function point(id) {
+            $('#display-time-left').remove();
             var thisId = $('#' + id);
             thisId.css('color', '#DC143C');
             $.ajax({

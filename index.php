@@ -338,7 +338,8 @@ if ($_SERVER['REMOTE_ADDR'] == '111.251.159.104') {
                 return scrollHeight;
             }
             window.onscroll = function () {
-                if (getScrollHeight() == getWindowHeight() + getDocumentTop()) {
+                if ((getScrollHeight() == getWindowHeight() + getDocumentTop()) &&
+                    document.getElementById("display-time-left")) {
                     ShowTime();
                 }
             };

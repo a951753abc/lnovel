@@ -87,9 +87,6 @@ if ($hour >= 8) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
         $(function () {
-            // $('#s1').on('change', function() {
-            //     console.log('.on(change) = ' + $(this).val());
-            // });
             ShowTime();
         });
 
@@ -110,7 +107,6 @@ if ($hour >= 8) {
 </head>
 <body>
 <div class="mGzaTb">
-    <!--二周目-->
     <?php if ($loopCount == 1): ?>
         <p>「我記得你上次是用園藝做比喻......算了，我們還是快點去把目標解決吧。」</p>
         <p>我聳聳肩結束對話，接著從口袋中掏出瑞士刀，深呼吸做好心理準備。</p>
@@ -148,7 +144,6 @@ if ($hour >= 8) {
         <p><br></p>
         <p>失去意識前，我心想這次任務一定要給個死亡加給。</p>
         <p><span onclick="changeFate()" class="myButton">Load SaveFile.</span></p>
-        <!--三周目後-->
     <?php elseif ($loopCount > 1): ?>
         <p>「我記得你上次是用園藝做比喻......算了，我們還是快點去把目標解決吧。」</p>
         <p>我聳聳肩結束對話，接著從口袋中掏出瑞士刀，深呼吸做好心理準備。</p>
@@ -170,7 +165,6 @@ if ($hour >= 8) {
         <p>「好吧。就等到晚上。」</p>
         <p>無事可做的我，索性躺在地板上，看著天空發呆。</p>
         <p><span id="show-box"></span></p>
-        <!--一周目而且在晚上十二點之前-->
     <?php elseif ($loopCount == 0): ?>
         <?php if ($root == 1) :?>
         <p>AC 1999.5.10.</p>
@@ -191,7 +185,6 @@ if ($hour >= 8) {
         <p>最後，我解出Les Propheties的線索......</p>
         <p><br></p>
         <p>《作者不詳，於舊日本東京出土的殘缺手稿》</p>
-        <!--一周目時間在晚上十二點後-->
         <?php elseif ($root == 2): ?>
         <p>這個世界，經歷過兩次<ruby>末日<rt>Big Lost</rt></ruby>。</p>
         <p><br></p>
@@ -268,7 +261,5 @@ if ($hour >= 8) {
         <p><span onclick="changeFate()" class="myButton">Load SaveFile.</span></p>
     <?php endif; ?>
 </div>
-
-<!--「 <label><input id="s1" type="text" title="serifu"></label> 」 <br>-->
 </body>
 </html>

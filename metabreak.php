@@ -94,6 +94,7 @@ if (!$edit) {
                 $('html,body').animate({scrollTop:0}, 333);
                 $('#display-time-left').remove();
                 $('#break').empty();
+                $('#text-1').empty().html('<p>他卻不理會我的話語，一個箭步朝我衝來，手電筒的光源也同時消失。</p>');
                 $.ajax({
                     type: "POST",
                     url: "metaText.php",

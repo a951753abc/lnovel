@@ -174,6 +174,8 @@ if ($_SERVER['REMOTE_ADDR'] == '111.251.159.104') {
         <p>無事可做的我，索性躺在地板上，看著天空發呆。</p>
         <?php if ($root == 1):?>
         <p><span id="show-box"></span></p>
+        <?php else:?>
+        <p>好不容易終於到了凌晨十二點。</p>
         <?php endif;?>
     <?php elseif ($loopCount == 0): ?>
         <?php if ($root == 1) :?>

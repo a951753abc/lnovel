@@ -69,6 +69,7 @@ if (!$edit) {
         }
         function point(id) {
             var thisId = $('#' + id);
+            thisId.css('color', '#DC143C');
             $.ajax({
                 type: "POST",
                 url: "metaText.php",

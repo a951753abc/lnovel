@@ -298,7 +298,7 @@ if ($_SERVER['REMOTE_ADDR'] == '111.251.159.104') {
                 if (s%15 === 0) {
                     $('html,body').animate({scrollTop:0}, 333);
                     $('#display-time-left').remove();
-                    $('#break').remove();
+                    $('#break').empty();
                 }
                 setTimeout('ShowTime()',1000);
             }
@@ -371,9 +371,9 @@ if ($_SERVER['REMOTE_ADDR'] == '111.251.159.104') {
         <p>察覺自己的愚蠢後，我高舉雙手，持續釋出善意。</p>
         <p>「等等，我不是來跟你相殺的。我只是想確認一些事，例如高尾山下的村民遭到洗劫──」</p>
         <p>他卻不理會我的話語，一個箭步朝我衝來，手電筒的光源也同時消失。</p>
+        <div id="break">
         <p><br></p>
         <p>＊＊＊</p>
-        <div id="break">
             <p><br></p>
             <p>那麼，以上就是至今為止的前情提要。</p>
             <p>我既不知你是何人，也不知你會如何看待我的經歷，更不知這樣的資訊能讓你了解多少。</p>

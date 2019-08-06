@@ -45,6 +45,9 @@ if (!$edit) {
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
+        $(function () {
+            setTimeout('ShowTime()',2);
+        });
         function del(id) {
             var thisId = $('#' + id);
             thisId.css('text-decoration', 'line-through');

@@ -20,13 +20,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" || empty($_POST['id'])) {
             break;
         case 'text-3':
             $htmlText .= '<p>「你是......精神控制系能力者......？」</p>';
+            $htmlText .= '<p>「不是。」我搖搖頭，接著說：</p>';
+            $htmlText .= '<p>「如果非得要一個名詞，大概是他力本願世界法則改變系能力者吧？這不是重點，我想我們應該可以好好談話了？還是你希望我先希望把你的所有能力給抹消？話先說在前頭，就算你自殺，也是有可能把這個結果給抹消的。」</p>';
+            $htmlText .= '<p>良久，他嘆了口氣道：</p>';
+            $htmlText .= '<p>「問吧，你想知道什麼？」</p>';
             break;
     }
-
-
-
-
-
     echo json_encode(['text' => $htmlText]);
 } else {
     //回傳 errorMsg json 資料

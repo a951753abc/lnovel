@@ -46,7 +46,7 @@ if (!$edit) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
         $(function () {
-            setTimeout('ShowTime()',2);
+            setTimeout('ShowTime()',2000);
         });
         function del(id) {
             $('#display-time-left').remove();
@@ -62,6 +62,7 @@ if (!$edit) {
                 success: function(data) {
                     thisId.after(data.text);
                     thisId.prop('onclick', null).off('click');
+                    setTimeout('ShowTime()',2000);
                 },
                 error: function(jqXHR) {
                     console.log(jqXHR);

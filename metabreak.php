@@ -1,7 +1,4 @@
 <?php
-if (empty($_COOKIE['loopCount'])) {
-    exit;
-}
 $loopCount = $_COOKIE['loopCount'];
 $hour = date('H');
 if ($hour >= 8) {

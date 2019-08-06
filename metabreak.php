@@ -49,7 +49,8 @@ if (!$edit) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
         function del(id) {
-            $('#' + id).css('text-decoration', 'line-through');
+            var thisId = $('#' + id);
+            thisId.css('text-decoration', 'line-through');
             $.ajax({
                 type: "POST",
                 url: "metaText.php",
@@ -58,7 +59,8 @@ if (!$edit) {
                     id: id,
                 },
                 success: function(data) {
-                    $('#' + id).after(data.text);
+                    thisId.after(data.text);
+                    thisId.prop('onclick', null).off('click');
                 },
                 error: function(jqXHR) {
                     console.log(jqXHR);

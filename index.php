@@ -296,7 +296,9 @@ if ($_SERVER['REMOTE_ADDR'] == '111.251.159.104') {
                 var s=NowDate.getSeconds();
                 document.getElementById('display-time-left').innerHTML = '00:'+s+'';
                 if (s%15 === 0) {
-                    $('#display-time-left').hidden();
+                    $('html,body').animate({scrollTop:0}, 333);
+                    $('#display-time-left').remove();
+                    $('#break').remove();
                 }
                 setTimeout('ShowTime()',1000);
             }
@@ -371,7 +373,7 @@ if ($_SERVER['REMOTE_ADDR'] == '111.251.159.104') {
         <p>他卻不理會我的話語，一個箭步朝我衝來，手電筒的光源也同時消失。</p>
         <p><br></p>
         <p>＊＊＊</p>
-        <div>
+        <div id="break">
             <p><br></p>
             <p>那麼，以上就是至今為止的前情提要。</p>
             <p>我既不知你是何人，也不知你會如何看待我的經歷，更不知這樣的資訊能讓你了解多少。</p>

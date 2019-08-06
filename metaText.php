@@ -24,6 +24,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" || empty($_POST['id'])) {
             $htmlText .= '<p>話說回來這人自始自終只會大吼大叫，弄得我耳膜都有點痛，你讀起來也不是很舒服吧？我那夥伴說過太多的驚嘆號會妨礙閱讀。</p>';
             $htmlText .= '<p>所以──改寫吧。麻煩你跟我一併覆誦：</p>';
             $htmlText .= '<p style="cursor: pointer;" onclick="point(\'text-3\')" id="text-3">眼前的男子轉眼間冷卻下來，不被仇恨與憤怒衝昏頭。</p>';
+            $htmlText .= '<p id="display-time-left"></p>';
+            break;
+        case 'break2':
+            $htmlText .= '<p>看著眼前男子仍不斷咆嘯，並且這回從手上濺出有如鮮血般的紅色液體，我感到一陣尷尬。</p>';
+            $htmlText .= '<p>不，那個所以、好不容易到這步，我們再合作一下不行嗎？</p>';
+            $htmlText .= '<p>液體轉眼間化作尖刺射向我，想當然爾，我只能任由這些尖刺穿身而過。</p>';
+            $htmlText .= '<p>看著胸口溢出的大片血花，我再次嘆氣：</p>';
+            $htmlText .= '<p>這個能力根本沒有用處啊......</p>';
             break;
         case 'text-3':
             $htmlText .= '<p>「你是......精神控制系能力者......？」</p>';

@@ -93,17 +93,24 @@ if (!$edit) {
             var s=NowDate.getSeconds();
             document.getElementById('display-time-left').innerHTML = '00:'+s+'';
             if (s%59 === 0) {
+                var post;
                 $('html,body').animate({scrollTop:0}, 333);
                 $('#display-time-left').remove();
                 $('#break').empty();
                 $('#text-1').prop('onclick', null).off('click').empty().html('<p>他卻不理會我的話語，一個箭步朝我衝來，手電筒的光源也同時消失。</p>');
                 $('#text-2').prop('onclick', null).off('click').empty().html('<p>可男子卻未放棄攻擊的念頭，他一咬牙，厚重的鱗片覆上全身。</p>');
+                $('#text-3').prop('onclick', null).off('click').empty().html('<p>眼前的男子轉眼間冷卻下來，不被仇恨與憤怒衝昏頭。</p>');
+                if (document.getElementById('text-3')) {
+                    post = 'break2';
+                } else {
+                    post = 'break';
+                }
                 $.ajax({
                     type: "POST",
                     url: "metaText.php",
                     dataType: "json",
                     data: {
-                        id: 'break',
+                        id: post,
                     },
                     success: function(data) {
                         $('#break').after(data.text);

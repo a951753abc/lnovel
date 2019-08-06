@@ -24,7 +24,7 @@ if ($hour >= 8) {
     $hourText = 24 - $hour;
     $root = 1;
     $chtAry = [
-            '零', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二', '十三', '十四', '十五', '十六'
+        '零', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二', '十三', '十四', '十五', '十六'
     ];
     $hourText = $chtAry[$hourText];
 } else {
@@ -62,6 +62,7 @@ if ($hour >= 8) {
             // $('#s1').on('change', function() {
             //     console.log('.on(change) = ' + $(this).val());
             // });
+            ShowTime();
         });
 
         function nameChange() {
@@ -79,12 +80,21 @@ if ($hour >= 8) {
                 });
             });
         }
+
+        function ShowTime() {
+            var NowDate = new Date();
+            var h = NowDate.getHours();
+            var m = NowDate.getMinutes();
+            var s = NowDate.getSeconds();
+            document.getElementById('show-box').innerHTML = h + '時' + m + '分' + s + '秒';
+            setTimeout('ShowTime()', 1000);
+        }
     </script>
 </head>
 <body>
 <div class="mGzaTb">
     <!--二周目-->
-    <?php if ($loopCount == 1):?>
+    <?php if ($loopCount == 1): ?>
         <p>「我記得你上次是用園藝做比喻......算了，我們還是快點去把目標解決吧。」</p>
         <p>我聳聳肩結束對話，接著從口袋中掏出瑞士刀，深呼吸做好心理準備。</p>
         <p>「不行。」</p>
@@ -110,12 +120,19 @@ if ($hour >= 8) {
         <p>超治癒能力嗎──正當我這麼想著時，「死」已來到我面前。</p>
         <p>一陣異樣感掃過頸部，下一秒，我的嘴唇便吻上草地。</p>
         <p><br></p>
-        <p>「──<ruby>流<rt>Auto</rt>出<rt>Load</rt></ruby>。」</p>
+        <p>「──
+            <ruby>流
+                <rt>Auto</rt>
+                出
+                <rt>Load</rt>
+            </ruby>
+            。」
+        </p>
         <p><br></p>
         <p>失去意識前，我心想這次任務一定要給個死亡加給。</p>
         <p><a href="backend.php" target="_self">Load SaveFile.</a></p>
-    <!--三周目後-->
-    <?php elseif ($loopCount > 1):?>
+        <!--三周目後-->
+    <?php elseif ($loopCount > 1): ?>
         <p>「我記得你上次是用園藝做比喻......算了，我們還是快點去把目標解決吧。」</p>
         <p>我聳聳肩結束對話，接著從口袋中掏出瑞士刀，深呼吸做好心理準備。</p>
         <p>「嘿Boy，你想知道我聽這句話是第幾次嗎？」</p>
@@ -134,14 +151,21 @@ if ($hour >= 8) {
         <p>「......」</p>
         <p>我沉默了一下，接著兩手一攤。</p>
         <p>「好吧。就等到晚上。」</p>
-    <!--一周目而且在晚上十二點之前-->
-    <?php elseif ($loopCount == 0 && $root == 1):?>
+        <p>無事可做的我，索性躺在地板上，看著天空發呆。</p>
+        <p><span id="show-box"></span></p>
+        <!--一周目而且在晚上十二點之前-->
+    <?php elseif ($loopCount == 0 && $root == 1): ?>
         <p>AC 1999.5.10.</p>
         <p><br></p>
         <p>從學界被放逐後，這是我第一次，也許也是最後一次提起筆。</p>
         <p>我認為我有必須寫下什麼，將之留給後人，留給歷史見證。</p>
         <p><br></p>
-        <p>──這個世界會以兩千年為單位經歷<ruby>末日<rt>Big Lost</rt></ruby>。</p>
+        <p>──這個世界會以兩千年為單位經歷
+            <ruby>末日
+                <rt>Big Lost</rt>
+            </ruby>
+            。
+        </p>
         <p><br></p>
         <p>西元前，人與神以此為契機訣別，只得以那些流傳後世的神話，窺探樣貌。</p>
         <p>時至今日，地球仍存在無法解釋的古代文明遺跡。</p>
@@ -167,10 +191,20 @@ if ($hour >= 8) {
         <p>「我記得你上次是用園藝做比喻......算了，我們還是快點去把目標解決吧。」</p>
         <p>我聳聳肩結束對話，接著從口袋中掏出瑞士刀，深呼吸做好心理準備。</p>
         <p>他也不再多言，從地板上站起來後，一手搭上我的肩，另一隻手在空中比呀比的，彷彿在觸碰什麼我所無法辨識之物。</p>
-        <p>「──<ruby>流出<rt>Skip</rt></ruby>。」</p>
+        <p>「──
+            <ruby>流出
+                <rt>Skip</rt>
+            </ruby>
+            。」
+        </p>
         <p>下一秒，時間與物理的法則被一併扭曲。</p>
         <p>這便是他的能力。</p>
-        <p>將時間飛快流逝，直至下一個無法跨越的<ruby>命運分歧點<rt>Flag</rt></ruby>。作用期間，體感上一秒相當於現實時間一小時，且所有行動資訊會轉化為平面文字。</p>
+        <p>將時間飛快流逝，直至下一個無法跨越的
+            <ruby>命運分歧點
+                <rt>Flag</rt>
+            </ruby>
+            。作用期間，體感上一秒相當於現實時間一小時，且所有行動資訊會轉化為平面文字。
+        </p>
         <p>數秒後，我們已經身處郊外山區，並與目標能力者互相對峙。</p>
         <p><br></p>
         <p>「你們這些......諾斯底的......走狗！」</p>
@@ -186,15 +220,25 @@ if ($hour >= 8) {
         <p>哎呀──失敗了呢。</p>
         <p>面對即將到來的死，我坦然鬆開雙手，放棄掙扎。</p>
         <p><br></p>
-        <p>「<ruby>流<rt>Auto</rt></ruby>......<ruby>出<rt>Load</rt>.....</ruby>」</p>
+        <p>「
+            <ruby>流
+                <rt>Auto</rt>
+            </ruby>
+            ......
+            <ruby>出
+                <rt>Load</rt>
+                .....
+            </ruby>
+            」
+        </p>
         <p><br></p>
         <p>然而死神終究是慢了一步，當我不知被什麼冰冷之物給貫穿心臟時，耳邊傳來夥伴不肯向命運低頭的呢喃聲。</p>
         <p><br></p>
         <p>二周目見，不知名的男子，下次我會盡量讀完對話紀錄的。</p>
         <p><a href="backend.php" target="_self">Load SaveFile.</a></p>
-    <!--一周目時間在晚上十二點後-->
-    <?php elseif ($loopCount == 0 && $root == 2):?>
-    <?php endif;?>
+        <!--一周目時間在晚上十二點後-->
+    <?php elseif ($loopCount == 0 && $root == 2): ?>
+    <?php endif; ?>
 </div>
 
 <!--「 <label><input id="s1" type="text" title="serifu"></label> 」 <br>-->

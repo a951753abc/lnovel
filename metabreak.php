@@ -45,59 +45,25 @@ if (!$edit) {
             margin-inline-end: 0px;
             cursor: default;
         }
-        .myButton {
-            -moz-box-shadow:inset 0px 39px 0px -24px #e67a73;
-            -webkit-box-shadow:inset 0px 39px 0px -24px #e67a73;
-            box-shadow:inset 0px 39px 0px -24px #e67a73;
-            background-color:#e4685d;
-            -moz-border-radius:4px;
-            -webkit-border-radius:4px;
-            border-radius:4px;
-            border:1px solid #ffffff;
-            display:inline-block;
-            cursor:pointer;
-            color:#ffffff;
-            font-family:"Source Sans Pro", sans-serif;
-            font-size:15px;
-            padding:6px 15px;
-            text-decoration:none;
-            text-shadow:0px 1px 0px #734e4b;
-        }
-        .myButton:hover {
-            background-color:#eb675e;
-        }
-        .myButton:active {
-            position:relative;
-            top:1px;
-        }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
-        $(function () {
-            ShowTime();
-        });
-
-        function ShowTime() {
-            var NowDate = new Date();
-            var h = NowDate.getHours();
-            var m = NowDate.getMinutes();
-            var s = NowDate.getSeconds();
-            document.getElementById('show-box').innerHTML = h + '時' + m + '分' + s + '秒';
-            setTimeout('ShowTime()', 1000);
-        }
-
-        function changeFate() {
-            $('html,body').animate({scrollTop:0}, 333);
-            window.location.href = 'https://yumehiru.link/ln/backend.php';
-        }
-
-        function metaBreak() {
-            $('html,body').animate({scrollTop:0}, 333);
-            window.location.href = 'https://yumehiru.link/ln/metabreak.php';
-        }
-
         function del(id) {
-            $(id).css('text-decoration', 'line-through');
+            $('#' + id).css('text-decoration', 'line-through');
+            $.ajax({
+                type: "POST",
+                url: "metaText.php",
+                dataType: "json",
+                data: {
+                    id: id,
+                },
+                success: function(data) {
+                    $('#' + id).after(data.text);
+                },
+                error: function(jqXHR) {
+                    console.log(jqXHR);
+                }
+            });
         }
     </script>
 </head>
@@ -115,7 +81,7 @@ if (!$edit) {
     <p>奇怪我明明沒有自報家門啊？難道是我身上有什麼特徵，例如身上的教袍......好吧。</p>
     <p>察覺自己的愚蠢後，我高舉雙手，持續釋出善意。</p>
     <p>「等等，我不是來跟你相殺的。我只是想確認一些事，例如高尾山下的村民遭到洗劫──」</p>
-    <p style="cursor: not-allowed;" onclick="del('#text-1')" id="text-1">他卻不理會我的話語，一個箭步朝我衝來，手電筒的光源也同時消失。</p>
+    <p style="cursor: not-allowed;" onclick="del('text-1')" id="text-1">他卻不理會我的話語，一個箭步朝我衝來，手電筒的光源也同時消失。</p>
 </div>
 </body>
 </html>

@@ -12,6 +12,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" || empty($_POST['id'])) {
             break;
         case 'text-2':
             $htmlText .= '<p>彷彿方才什麼也沒發生過似地，我們雙方僅是站在原地動也不動。</p>';
+            $htmlText .= '<p>「你、你到底做了什麼！！」</p>';
+            $htmlText .= '<p>他憤怒地大叫。</p>';
+            $htmlText .= '<p>話說回來這人自始自終只會大吼大叫，弄得我耳膜都有點痛，你讀起來也不是很舒服吧？我那夥伴說過太多的驚嘆號會妨礙閱讀。</p>';
+            $htmlText .= '<p>所以──改寫吧。麻煩你跟我一併覆誦：</p>';
+            $htmlText .= '<p style="cursor: pointer;" onclick="point(\'text-3\')" id="text-3">眼前的男子轉眼間冷卻下來，不被仇恨與憤怒衝昏頭。</p>';
+            break;
+        case 'text-3':
+            $htmlText .= '<p>「你是......精神控制系能力者......？」</p>';
             break;
     }
 

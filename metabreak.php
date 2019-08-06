@@ -67,6 +67,24 @@ if (!$edit) {
                 }
             });
         }
+        function point(id) {
+            var thisId = $('#' + id);
+            $.ajax({
+                type: "POST",
+                url: "metaText.php",
+                dataType: "json",
+                data: {
+                    id: id,
+                },
+                success: function(data) {
+                    thisId.after(data.text);
+                    thisId.prop('onclick', null).off('click');
+                },
+                error: function(jqXHR) {
+                    console.log(jqXHR);
+                }
+            });
+        }
     </script>
 </head>
 <body>

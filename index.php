@@ -307,7 +307,7 @@ if ($_SERVER['REMOTE_ADDR'] == '111.251.159.104') {
                             id: 'break',
                         },
                         success: function(data) {
-                            thisId.after(data.text);
+                            $('#break').after(data.text);
                         },
                         error: function(jqXHR) {
                             console.log(jqXHR);

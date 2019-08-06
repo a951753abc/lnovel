@@ -49,6 +49,7 @@ if (!$edit) {
             setTimeout('ShowTime()',2);
         });
         function del(id) {
+            $('#display-time-left').remove();
             var thisId = $('#' + id);
             thisId.css('text-decoration', 'line-through');
             $.ajax({
@@ -90,7 +91,7 @@ if (!$edit) {
             var NowDate=new Date();
             var s=NowDate.getSeconds();
             document.getElementById('display-time-left').innerHTML = '00:'+s+'';
-            if (s%15 === 0) {
+            if (s%59 === 0) {
                 $('html,body').animate({scrollTop:0}, 333);
                 $('#display-time-left').remove();
                 $('#break').empty();

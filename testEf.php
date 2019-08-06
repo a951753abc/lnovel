@@ -56,34 +56,14 @@ session_start();
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
-        $(function () {
-
-        });
-        let countdown;
-        function timer() {
-            clearInterval(countdown);
-            const now = Date.now();
-            const then = Date.now() + 11 * 1000;
-            displayTimeLeft(11);
-            countdown = setInterval(() => {
-                const secondsLeft = Math.round((then -now) / 1000);
-                // 檢查是否需要停止倒數計時（當數字為 0 時）
-                if (secondsLeft < 0) {
-                    clearInterval(countdown);
-                    return;  // return 會跳出 function
-                }
-                // 將時間渲染至畫面
-                displayTimeLeft(secondsLeft);
-            }, 1000);
-        }
-        function displayTimeLeft(seconds) {
-            let timeLeft = document.querySelector('.display-time-left');
-            let remainderSeconds = seconds % 60;
-            if (remainderSeconds < 10) {
-                remainderSeconds = '0' + remainderSeconds;
+        function ShowTime(){
+            var NowDate=new Date();
+            var s=NowDate.getSeconds();
+            document.getElementById('display-time-left').innerHTML = '00:'+s+'';
+            if (s%5 === 0) {
+                console.log('boom');
             }
-            timeLeft.textContent = `${remainderSeconds}`;
-
+            setTimeout('ShowTime()',1000);
         }
 
         function getDocumentTop() {
@@ -122,7 +102,7 @@ session_start();
         }
         window.onscroll = function () {
             if (getScrollHeight() == getWindowHeight() + getDocumentTop()) {
-                timer();
+                ShowTime();
             }
         };
     </script>
@@ -327,7 +307,7 @@ session_start();
     <p>我無法假設你的想法，也無法與你對話。我所能做的，只有把自己的經歷資訊轉化為第一人稱平面資訊，以及把修改一切的能力轉交於你。</p>
     <p>如果你有意願的話，就請跟我這麼做吧──</p>
     <p><br></p>
-    <p class="display-time-left"></p>
+    <p id="display-time-left"></p>
 </div>
 </body>
 </html>

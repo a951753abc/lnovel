@@ -46,7 +46,7 @@ if (!$edit) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
         $(function () {
-            setTimeout('ShowTime()',2000);
+            setTimeout('ShowTime()',500);
         });
         function del(id) {
             $('#display-time-left').remove();
@@ -62,7 +62,7 @@ if (!$edit) {
                 success: function(data) {
                     thisId.after(data.text);
                     thisId.prop('onclick', null).off('click');
-                    setTimeout('ShowTime()',2000);
+                    setTimeout('ShowTime()',500);
                 },
                 error: function(jqXHR) {
                     console.log(jqXHR);
@@ -97,6 +97,7 @@ if (!$edit) {
                 $('#display-time-left').remove();
                 $('#break').empty();
                 $('#text-1').prop('onclick', null).off('click').empty().html('<p>他卻不理會我的話語，一個箭步朝我衝來，手電筒的光源也同時消失。</p>');
+                $('#text-2').prop('onclick', null).off('click').empty().html('<p>可男子卻未放棄攻擊的念頭，他一咬牙，厚重的鱗片覆上全身。</p>');
                 $.ajax({
                     type: "POST",
                     url: "metaText.php",
